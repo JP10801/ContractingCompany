@@ -1,0 +1,246 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  --header-height: 4rem;
+
+  /* Colors */
+  --primary-color: hsl(18, 95%, 55%);
+  --primary-color-light: hsl(18, 98%, 64%);
+  --secondary-color: hsl(42, 98%, 52%);
+  --title-color: hsl(255, 12%, 12%);
+  --text-color: hsl(225, 12%, 24%);
+  --text-light: hsl(255, 4%, 55%);
+  --background-color: #ffffff;
+  --card-bg: #ffffff;
+  --border-color: #e8e8e8;
+
+  /* Typography */
+  --body-font: "Montserrat", sans-serif;
+  --h1-size: 2rem;
+  --h2-size: 1.4rem;
+  --h3-size: 1.1rem;
+  --normal-size: 1rem;
+  --small-size: 0.85rem;
+
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semi-bold: 600;
+  --font-bold: 700;
+}
+
+/* Larger screen typography */
+@media screen and (min-width: 1150px) {
+  :root {
+    --h1-size: 2.5rem;
+    --h2-size: 1.8rem;
+    --h3-size: 1.3rem;
+    --normal-size: 1.1rem;
+  }
+}
+
+/*=============== BASE STYLES ===============*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: var(--normal-size);
+}
+
+img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+  font-weight: var(--font-bold);
+}
+
+/*=============== CONTAINER ===============*/
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-inline: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  justify-content: center;
+}
+
+/*=============== SECTIONS ===============*/
+.section {
+  padding: 5rem 0 3rem;
+  text-align: center;
+}
+
+.section__title {
+  font-size: var(--h1-size);
+  margin-bottom: 1rem;
+}
+
+/*=============== HEADER ===============*/
+.header {
+  width: 100%;
+  height: var(--header-height);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/*=============== BUTTONS ===============*/
+.button {
+  display: inline-block;
+  background: var(--primary-color);
+  color: white;
+  padding: 0.85rem 2rem;
+  border-radius: 6px;
+  font-weight: var(--font-medium);
+  transition: 0.3s;
+  margin-top: 1rem;
+}
+
+.button:hover {
+  background: var(--primary-color-light);
+  transform: translateY(-2px);
+}
+
+/*=============== HOME SECTION ===============*/
+.home__container {
+  text-align: center;
+}
+
+.home__title {
+  font-size: var(--h1-size);
+  margin-bottom: 1rem;
+}
+
+.home__description {
+  max-width: 650px;
+  margin: 0 auto 1.5rem;
+  color: var(--text-light);
+}
+
+/*=============== ABOUT SECTION ===============*/
+.about__content {
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.about__description {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--text-light);
+}
+
+/*=============== SERVICES SECTION ===============*/
+.services__container {
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.5rem;
+}
+
+.services__card {
+  background: var(--card-bg);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.services__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.services__icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.services__title {
+  margin-bottom: 0.5rem;
+  font-size: var(--h3-size);
+}
+
+.services__description {
+  color: var(--text-light);
+  font-size: var(--normal-size);
+}
+
+/*=============== PROJECTS SECTION ===============*/
+.projects__container {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.projects__card {
+  text-align: center;
+}
+
+.projects__title {
+  font-size: var(--h3-size);
+  margin-top: 1rem;
+}
+
+.projects__description {
+  color: var(--text-light);
+  margin-top: 0.5rem;
+}
+
+/*=============== CONTACT SECTION ===============*/
+.contact__info {
+  text-align: center;
+  font-size: var(--normal-size);
+}
+
+.contact__info p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: var(--title-color);
+}
+
+.contact__info i {
+  color: var(--primary-color);
+  margin-right: 0.5rem;
+}
+
+/*=============== FOOTER ===============*/
+.footer {
+  background: #f5f5f5;
+  padding: 3rem 1rem;
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  margin-top: 3rem;
+}
+
+.footer__title {
+  font-size: var(--h2-size);
+  margin-bottom: 0.5rem;
+}
+
+.footer p {
+  color: var(--text-light);
+  margin-top: 0.5rem;
+  font-size: var(--small-size);
+}
+
